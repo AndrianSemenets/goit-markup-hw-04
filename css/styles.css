@@ -8,6 +8,8 @@
   --background-dark:#2F303A;
   --ctcs: rgba(255, 255, 255, 0.6);
   --port-line: #ececec;
+  --decoration-color: #afb1b8;
+  
 }
 
 html {
@@ -53,16 +55,9 @@ img {
   align-items: center;
 }
 
-.ctcs .link {
-  display: block;
+.ctcs .link{
+	display: flex;
   align-items: center;
-}
-
-.site-navigation .link 
-{color:var(--primary-text);
-  font-weight: 500;
-  font-size: 14px;
-  font-style: normal;
 }
 
 .navigation {
@@ -70,6 +65,10 @@ img {
 }
   
 .site-navigation .link {
+  color:var(--primary-text);
+  font-weight: 500;
+  font-size: 14px;
+  font-style: normal;
 	display: block;
 	padding: 32px 0 32px;
   font-weight: 500;
@@ -80,7 +79,27 @@ img {
 
 .site-navigation .item:not(:last-child),
 .ctcs .item:not(:last-child) {
-	padding-right: 50px;}
+  margin-right: 50px;}
+  
+  .ctcs .icon {
+    margin-right: 10px;
+    fill: var(--secondary-text);
+  }
+  
+  .ctcs .icon-phone {
+    width: 10px;
+    height: 15px;
+  }
+  
+  .ctcs .icon-mail {
+    width: 16px;
+    height: 12px;
+  }
+  
+.ctcs .link:hover .icon,
+.ctcs .link:focus .icon {
+  fill: var(--active);
+  cursor: pointer;}
 
 /* logo*/
 
@@ -96,7 +115,7 @@ font-style: normal;
 font-weight: 700; 
 font-size: 26px;
 line-height: 1.19;
-margin-right: 93px;
+padding-right: 93px;
 }
 
 .logo:hover,
@@ -138,6 +157,14 @@ color: var(--active);
   padding: 200px 0 200px;
   text-align: center;
   background: var(--background-dark);
+  background-image: linear-gradient(
+  to right,
+  rgba(47, 48, 58, 0.4),
+  rgba(47, 48, 58, 0.4)
+  ), url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+
 }
 
 .effective-title {
@@ -163,6 +190,7 @@ color: var(--active);
   font-family: inherit;
   margin: auto;
   padding: 10px 32px;
+  cursor: pointer;
 }
 
 .buttons {
@@ -177,7 +205,6 @@ color: var(--active);
   border-radius: 4px;
 }
 
-.invisible-title {color: var(--white)}
 
 .buttons:hover {
 background-color: var(--active);
@@ -219,6 +246,30 @@ font-size: 14px;
 line-height: 1.71;
 }
 
+.advantages-list .item::before {
+  content: "";
+  display: block;
+  height: 120px;
+  background: var(--gray-bgc);
+  border-radius: 4px;
+  margin-bottom: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  }
+
+.item.icon-attention::before {
+background-image: url(../img/antenna.png);
+}
+
+.item.icon-clock::before {
+background-image: url(../img/clock.png);}
+
+.item.icon-plan::before {
+background-image: url(../img/plans.png);}
+
+.item.icon-cosmic::before {
+  background-image: url(../img/cosmic.png);}
+
 /*what we do*/
 .service {
 padding-bottom: 94px;}
@@ -233,7 +284,7 @@ text-align: center;
 
 .service .list {display: flex;}
 
-.service .item:not(:last-child) {
+.item:not(:last-child) {
 margin-right: 30px;}
 
 /*Team*/
@@ -246,7 +297,7 @@ font-size: 16px;
 .our-team .list {
 display: flex;}
 
-.our-team .item:not(:last-child)
+.item:not(:last-child)
 {margin-right: 30px;}
 
 .our-team .item
@@ -267,18 +318,145 @@ line-height: 1.16;
 text-align: center;
 color: var(--primary-text)}
 
+.inner {
+padding-top: 30px;
+padding-bottom: 16px;
+display: block;
+}
+
 .team-name {
-margin-top: 30px;
 line-height: 1.18;
 color: var(--primary-text);
+justify-content: center;
+margin-bottom: 10px;
 }
- 
+
 .function {
 color: var(--secondary-text);
 font-weight: 400;
 font-size: 16px;
 line-height: 1.18;
-margin-bottom: 30px;
+justify-content: center;
+display: flex;
+}
+
+.social li {
+	margin-right: 10px;
+}
+
+.social li:last-child {
+	margin-right: 0;
+}
+
+.social .link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom:30px;
+}
+
+.our-team .icon {
+	width: 20px;
+	height: 20px;
+	fill: var(--decoration-color);
+}
+
+.our-team .link:hover .icon,
+.team .link:focus .icon {
+	fill: var(--gray-bgc);
+}
+
+.social .link:hover,
+.social .link:focus {
+  background-color: var(--active);}
+  
+/*        Clients        */
+
+.clients {
+	padding-top: 94px;
+	padding-bottom: 94px;
+}
+
+.clients .list {
+	display: flex;
+}
+
+.clients-title {
+	margin-top: 0;
+	margin-bottom: 50px;
+
+	color: var(--primary-text);
+	font-size: 36px;
+	line-height: 1.16;
+	text-align: center;
+}
+
+.clients .item {
+	margin-right: 30px;
+}
+
+.clients .item:last-child {
+	margin-right: 0;
+}
+
+.clients .link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 170px;
+	height: 90px;
+
+	border: 1px solid var(--decoration-color);
+	border-radius: 4px;
+}
+
+.clients .link:hover,
+.clients .link:focus {
+	border-color: var(--active);
+}
+
+.clients .icon {
+	fill: var(--decoration-color);
+}
+
+.clients .link:hover .icon,
+.clients .link:focus .icon {
+	fill: var(--active);
+}
+
+.clients .item:nth-child(1) .icon {
+	width: 44px;
+	height: 49px;
+}
+
+.clients .item:nth-child(2) .icon {
+	width: 40px;
+	height: 52px;
+}
+
+.clients .item:nth-child(3) .icon {
+	width: 41px;
+	height: 42px;
+}
+
+.clients .item:nth-child(4) .icon {
+	width: 79px;
+	height: 42px;
+}
+
+.clients .item:nth-child(5) .icon {
+	width: 59px;
+	height: 47px;
+}
+
+.clients .item:nth-child(6) .icon {
+	width: 88px;
+	height: 45px;
 }
 
 /*footer*/
@@ -287,20 +465,20 @@ margin-bottom: 30px;
 background-color:var(--background-dark);
 padding-top: 60px;
 padding-bottom: 60px;
-text-align: start;
 color: rgba(255, 255, 255, 0.6)
 }
 
 .footer .header {
 	margin-bottom: 20px;}
 
-.footer .link
+.footer-address .link
 {display: block;
 font-style: normal;
 color: inherit;
 }
 
-.address {color: var(--white);
+.address {
+color: var(--white);
 font-size: 14px;
 line-height: 1.71;
 font-style: normal;
@@ -313,11 +491,62 @@ font-style: normal;
   margin-bottom: 9px;
 }
 
-.street {padding-top: 20px;}
+.street {margin-top: 20px;}
 
 .footer .logo-header {
   color: var(--white);
 }
+
+.footer-address {
+  margin-right: 70px;
+}
+
+.footer .container {
+  display: flex;
+}
+
+/*       Join       */
+
+.join .social {
+	display: flex;
+}
+
+.join .link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.join .item {
+	margin-right: 10px;
+}
+
+.join .item:last-child {
+	margin-right: 0;
+}
+
+.join-title {
+	margin-top: 12px;
+	margin-bottom: 20px;
+	color: var(--white);
+	font-weight: 700;
+	line-height: 1.14;
+	text-transform: uppercase;
+}
+
+.join .icon {
+	width: 20px;
+	height: 20px;
+	fill: var(--white);
+}
+
+/*porfolio*/
 
 .examples {
 	padding: 94px 0 94px;
