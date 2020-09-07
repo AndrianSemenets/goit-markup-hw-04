@@ -368,7 +368,7 @@ display: flex;
 
 .our-team .link:hover .icon,
 .team .link:focus .icon {
-	fill: var(--gray-bgc);
+	fill: var(--white);
 }
 
 .social .link:hover,
